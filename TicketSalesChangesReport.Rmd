@@ -37,6 +37,7 @@ st    <- ticket_group_table %>% filter(ticket_group == "Season Tickets")
 sp    <- ticket_group_table %>% filter(ticket_group == "Single Primary")
 ss    <- ticket_group_table %>% filter(ticket_group == "Single Secondary")
 gr    <- ticket_group_table %>% filter(ticket_group == "Group")
+mi    <- ticket_group_table %>% filter(ticket_group == "Mini")
 
 price_25  <- avg_price_table$avg_price_per_seat[avg_price_table$season == "2025"]
 price_26  <- avg_price_table$avg_price_per_seat[avg_price_table$season == "2026"]
@@ -87,7 +88,7 @@ ticket_group_table %>%
                 font_size = 11)
 ```
 
-The number of Opening Day tickets attributed to Season Tickets decreased by `r format(abs(st$seats_2025 - st$seats_2026), big.mark = ",")` tickets (`r abs(st$seats_chg_pct)`% decrease) but there has been a `r st$revenue_chg_pct`% increase in revenue. Group tickets decreased by `r format(abs(gr$seats_2025 - gr$seats_2026), big.mark = ",")` (`r abs(gr$seats_chg_pct)`% decrease) with a `r abs(gr$revenue_chg_pct)`% decrease in revenue. Single game secondary tickets increased by `r format(ss$seats_2026 - ss$seats_2025, big.mark = ",")` (`r ss$seats_chg_pct`% increase) with a `r ss$revenue_chg_pct`% increase in revenue. Single game primary tickets decreased by `r format(abs(sp$seats_2025 - sp$seats_2026), big.mark = ",")` (`r abs(sp$seats_chg_pct)`% decrease) but with a `r sp$revenue_chg_pct`% increase in revenue.
+The number of Opening Day tickets attributed to Season Tickets decreased by `r format(abs(st$seats_2025 - st$seats_2026), big.mark = ",")` tickets (`r abs(st$seats_chg_pct)`% decrease) but there has been a `r st$revenue_chg_pct`% increase in revenue. Group tickets decreased by `r format(abs(gr$seats_2025 - gr$seats_2026), big.mark = ",")` (`r abs(gr$seats_chg_pct)`% decrease) with a `r abs(gr$revenue_chg_pct)`% decrease in revenue. Single game secondary tickets increased by `r format(ss$seats_2026 - ss$seats_2025, big.mark = ",")` (`r ss$seats_chg_pct`% increase) with a `r ss$revenue_chg_pct`% increase in revenue. Single game primary tickets decreased by `r format(abs(sp$seats_2025 - sp$seats_2026), big.mark = ",")` (`r abs(sp$seats_chg_pct)`% decrease) but with a `r sp$revenue_chg_pct`% increase in revenue. The number of tickets from mini-ticket plans increased by `r format(mi$seats_2026 - mi$seats_2025, big.mark = ",")` (`r mi$seats_chg_pct`% increase) with a `r mi$revenue_chg_pct`% increase in revenue.
 
 
 # Site Traffic - Opening Day Hits
@@ -110,7 +111,7 @@ avg_price_table %>%
   kable_styling(latex_options = c("hold_position"), font_size = 11)
 ```
 
-Since last season, the average ticket price on Opening Day for a single game ticket went up by `r ldollar(price_26 - price_25)` (`r price_chg`% increase). The number of seats sold went down by `r format(abs(avg_price_table$total_seats[avg_price_table$season == "2026"] - avg_price_table$total_seats[avg_price_table$season == "2025"]), big.mark = ",")`.
+Since last season, the average ticket price on Opening Day for a single game ticket went up by `r ldollar(price_26 - price_25)` (`r price_chg`% increase). The number of seats sold went down by `r format(abs(avg_price_table$total_seats[avg_price_table$season == "2026"] - avg_price_table$total_seats[avg_price_table$season == "2025"]), big.mark = ",")` (`r round(abs(avg_price_table$total_seats[avg_price_table$season == "2026"] - avg_price_table$total_seats[avg_price_table$season == "2025"]) / avg_price_table$total_seats[avg_price_table$season == "2025"] * 100, 1)`% decrease).
 
 \newpage
 

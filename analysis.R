@@ -97,6 +97,9 @@ ticket_group_table <- tibble(
   revenue_chg_pct = ifelse(
     revenue_2025 == 0, NA,
     round((revenue_2026 - revenue_2025) / revenue_2025 * 100, 2))
+) %>% select(
+  ticket_group, seats_2025, seats_2026, seats_chg_pct,
+  revenue_2025, revenue_2026, revenue_chg_pct
 )
 
 # ---- 1.2 Overall Average Pricing by Season (Non-Premium, Single Game) ----
