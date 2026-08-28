@@ -47,9 +47,9 @@ This project examines the impact of intentionally reducing season ticket invento
 
 ## Tools & Techniques
 
-- **R** — data wrangling (dplyr, tidyr, lubridate), visualization (ggplot2), reporting (R Markdown, kableExtra)
-- **SQL (BigQuery)** — original data was sourced from Google BigQuery (clickstream, ticketing, and event tables). The portfolio version uses synthetic data generated in R.
-- **Analysis methods** — year-over-year comparison, price elasticity assessment, cumulative site traffic analysis, sales pacing snapshots, conversion rate tracking
+- **R** - data wrangling (dplyr, tidyr, lubridate), visualization (ggplot2), reporting (R Markdown, kableExtra)
+- **SQL (BigQuery)** - original data was sourced from Google BigQuery (clickstream, ticketing, and event tables). The portfolio version uses synthetic data generated in R.
+- **Analysis methods** - year-over-year comparison, price elasticity assessment, cumulative site traffic analysis, sales pacing snapshots, conversion rate tracking
 
 ## Data Note
 
