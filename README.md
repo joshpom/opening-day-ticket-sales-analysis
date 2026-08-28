@@ -4,7 +4,7 @@ An analysis of how strategic pricing changes for Opening Day affected ticket rev
 
 ## Overview
 
-This project examines the impact of intentionally reducing season ticket inventory and significantly increasing single-game ticket prices for Opening Day. The analysis spans 4–5 seasons of data across 30+ seating price locations in a professional baseball stadium.
+This project examines the impact of intentionally reducing season ticket inventory and increasing single-game ticket prices for Opening Day. The analysis spans 4–5 seasons of data across 30+ seating price locations in a professional baseball stadium.
 
 **Key questions addressed:**
 - Did higher prices drive enough revenue growth to offset lower volume?
