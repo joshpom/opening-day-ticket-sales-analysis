@@ -2,8 +2,7 @@
 # Opening Day Ticket Sales Changes — Analysis Script
 # ============================================================
 #
-# This script generates synthetic ticket sales data for a
-# professional baseball team and produces all analysis and
+# This script generates synthetic ticket sales data for the Atlanta Braves and produces all analysis and
 # visualizations for the Ticket Sales Changes Report.
 #
 # The analysis examines how strategic pricing changes for
