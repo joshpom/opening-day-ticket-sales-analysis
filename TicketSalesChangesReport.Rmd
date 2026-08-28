@@ -137,7 +137,7 @@ This graph shows the conversion rates (number of unique buyers / number of visit
 knitr::include_graphics("images/grandstand_corner.png")
 ```
 
-Single-game tickets for Opening Day in the Grandstand Corner were virtually sold out months ahead of time in years past. This year, tickets sold slower but still steadily over the months leading up to Opening Day.
+Single-game tickets for Opening Day in the Grandstand Corner had most of their sales months ahead of time in years past. This year, tickets sold slower but still steadily over the months leading up to Opening Day.
 
 
 ## Dugout Infield 3B
@@ -146,7 +146,7 @@ Single-game tickets for Opening Day in the Grandstand Corner were virtually sold
 knitr::include_graphics("images/dugout_infield_3b.png")
 ```
 
-Dugout Infield 3B tickets sold significantly in the last 30 days before Opening Day and were still able to essentially sell out.
+Dugout Infield 3B tickets sold significantly in the last 30 days before Opening Day and were still able to nearly sell out and have comparable sales to prior seasons. 
 
 
 # Proportion of Season Tickets by Price Location: 2025 vs. 2026
