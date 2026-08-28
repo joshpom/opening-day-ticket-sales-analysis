@@ -31,6 +31,11 @@ ldollar <- function(x) {
   paste0("\\$", formatC(x, format = "f", digits = 0, big.mark = ","))
 }
 
+# Helper for average prices (two decimal places)
+ldollar2 <- function(x) {
+  paste0("\\$", formatC(x, format = "f", digits = 2, big.mark = ","))
+}
+
 # Pre-compute key metrics for inline use
 total <- ticket_group_table %>% filter(ticket_group == "Total")
 st    <- ticket_group_table %>% filter(ticket_group == "Season Tickets")
@@ -41,7 +46,7 @@ mi    <- ticket_group_table %>% filter(ticket_group == "Mini")
 
 price_25  <- avg_price_table$avg_price_per_seat[avg_price_table$season == "2025"]
 price_26  <- avg_price_table$avg_price_per_seat[avg_price_table$season == "2026"]
-price_chg <- round((price_26 - price_25) / price_25 * 100, 1)
+price_chg <- round((price_26 - price_25) / price_25 * 100, 2)
 ```
 
 *Note: This report uses synthetically generated data for portfolio purposes. The analytical framework and methodology reflect a real project.*
@@ -58,7 +63,7 @@ Total primary market revenue for Opening Day increased from `r ldollar(total$rev
 **What We Did Differently**
 
 - **Season ticket volume was reduced intentionally.** Decreased `r format(abs(st$seats_2025 - st$seats_2026), big.mark = ",")` from `r format(st$seats_2025, big.mark = ",")` to `r format(st$seats_2026, big.mark = ",")` (`r abs(st$seats_chg_pct)`% decrease)(\hyperref[ticket_class_distribution]{see Ticket Class Distribution}).
-- **Single game prices were increased significantly.** Average single game price increased from `r ldollar(price_25)` to `r ldollar(price_26)` (`r price_chg`% increase)(\hyperref[average_pricing_opening_day]{see Average Pricing Opening Day}).
+- **Single game prices were increased significantly.** Average single game price increased from `r ldollar2(price_25)` to `r ldollar2(price_26)` (`r price_chg`% increase)(\hyperref[average_pricing_opening_day]{see Average Pricing Opening Day}).
 - **Group discount was eliminated.**
 
 **What Happened**
@@ -111,7 +116,7 @@ avg_price_table %>%
   kable_styling(latex_options = c("hold_position"), font_size = 11)
 ```
 
-Since last season, the average ticket price on Opening Day for a single game ticket went up by `r ldollar(price_26 - price_25)` (`r price_chg`% increase). The number of seats sold went down by `r format(abs(avg_price_table$total_seats[avg_price_table$season == "2026"] - avg_price_table$total_seats[avg_price_table$season == "2025"]), big.mark = ",")` (`r round(abs(avg_price_table$total_seats[avg_price_table$season == "2026"] - avg_price_table$total_seats[avg_price_table$season == "2025"]) / avg_price_table$total_seats[avg_price_table$season == "2025"] * 100, 1)`% decrease).
+Since last season, the average ticket price on Opening Day for a single game ticket went up by `r ldollar2(price_26 - price_25)` (`r price_chg`% increase). The number of seats sold went down by `r format(abs(avg_price_table$total_seats[avg_price_table$season == "2026"] - avg_price_table$total_seats[avg_price_table$season == "2025"]), big.mark = ",")` (`r round(abs(avg_price_table$total_seats[avg_price_table$season == "2026"] - avg_price_table$total_seats[avg_price_table$season == "2025"]) / avg_price_table$total_seats[avg_price_table$season == "2025"] * 100, 1)`% decrease).
 
 \newpage
 
